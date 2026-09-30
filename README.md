@@ -17,6 +17,14 @@
 | **02** | **Careem** | Ride-Hailing & Super App | Uber H3 Hexagonal Spatial Index, Sub-Second Matchmaking, Real-Time Surge Pricing, ACID Ledger | Amazon MSK (Kafka), Apache Flink, MemoryDB, DynamoDB, Aurora PostgreSQL | [Read Case Study ➔](cases/02-careem-ride-hailing/README.md) |
 | **03** | **Netflix** | Planetary VOD & Streaming | Massively Parallel Chunk Transcoding, Multi-Region Active-Active DR, Playback Sync, Edge CDN | CloudFront, AWS Batch, DynamoDB Global Tables, Route 53 ARC, SageMaker | [Read Case Study ➔](cases/03-netflix-video-streaming/README.md) |
 | **04** | **Justlife** | On-Demand Home Services | High-Concurrency Slot Availability, Distributed Locking, Multi-Day Workflow Orchestrator, Subscriptions | Step Functions, EventBridge Scheduler, ECS Fargate, Redis Bitmaps, Aurora | [Read Case Study ➔](cases/04-justlife-home-services/README.md) |
+| **05** | **ClickHouse** | Real-Time Columnar OLAP | Disaggregated Storage/Compute, NVMe Local Cache + S3 Zero-Copy Replication, High-Throughput Streaming | Amazon MSK, ClickHouse Keeper, EC2 i4i (NVMe), Amazon S3, AWS NLB | [Read Case Study ➔](cases/05-clickhouse-analytics/README.md) |
+| **06** | **Apple App Store** | App Distribution & Security | Dynamic Binary Slicing, Byte-Level Delta Updates, Static/Dynamic Malware Sandboxes, FairPlay DRM | AWS Batch, EC2 Mac Sandboxes, CloudFront Origin Shield, AWS CloudHSM | [Read Case Study ➔](cases/06-apple-app-store/README.md) |
+| **07** | **Google Play Store** | Dynamic App Delivery & Ecosystem | Android App Bundle (AAB) Split Engine, Play Integrity Attestation, In-App Subscriptions | EKS, AWS KMS, S3 Split Buckets, CloudFront, DynamoDB, EventBridge | [Read Case Study ➔](cases/07-google-play-store/README.md) |
+| **08** | **Shopify** | Multi-Tenant E-Commerce | Virtual Waiting Room, In-Memory Atomic Inventory Slicing, Multi-Tenant Sharded Pods, Flash Sales | CloudFront, AWS WAF, MemoryDB Lua Scripts, Aurora PostgreSQL, SQS FIFO | [Read Case Study ➔](cases/08-shopify-ecommerce/README.md) |
+| **09** | **Aramex** | Express Logistics & Tracking | High-Velocity Barcode/RFID Scan Pipeline, WhatsApp Geolocation Pin Bot, COD Cash Ledger | Kinesis Data Streams, Amazon Location Service, Pinpoint, DynamoDB, Aurora | [Read Case Study ➔](cases/09-aramex-logistics-tracking/README.md) |
+| **10** | **FedEx** | Superhub Logistics & IoT | Sub-15ms Edge Conveyor Divert, SenseAware Cold-Chain Telemetry, Flight 3D Bin Packing | AWS IoT Greengrass, AWS IoT Core, Timestream, Flink, AWS Batch, DynamoDB | [Read Case Study ➔](cases/10-fedex-sorting-hub-operations/README.md) |
+| **11** | **DHL** | Global Freight & Customs | Legacy B2B EDI (AS2/EDIFACT/X12), AI Customs Invoice OCR & HS Classification, WORM Vault | AWS Transfer Family, B2B Data Interchange, Amazon Textract, Bedrock, S3 Object Lock | [Read Case Study ➔](cases/11-dhl-global-freight-customs/README.md) |
+| **12** | **LinkedIn** | Professional Social Graph | N-Degree Graph Traversals, Hybrid Feed Fan-Out (Celebrity vs Regular), Real-Time InMail, Vector Search | Amazon Neptune, ElastiCache Redis Graph, Amazon MSK, DynamoDB, OpenSearch | [Read Case Study ➔](cases/12-linkedin-social-graph/README.md) |
 
 ---
 
@@ -81,18 +89,23 @@ flowchart LR
 ```text
 aws-use-cases/
 ├── README.md                              # Master Catalog & Architecture Guide (This file)
+├── LICENSE                                # MIT open-source license
 ├── .gitignore                             # Git ignore rules
 ├── templates/
 │   └── use-case-template.md               # Standardized template for new architecture exercises
 └── cases/
-    ├── 01-talabat-food-delivery/
-    │   └── README.md                      # Talabat: Quick commerce & 3-sided marketplace architecture
-    ├── 02-careem-ride-hailing/
-    │   └── README.md                      # Careem: Mobility, H3 spatial matching, surge pricing, ledger
-    ├── 03-netflix-video-streaming/
-    │   └── README.md                      # Netflix: VOD transcoding, CloudFront, multi-region active-active
-    └── 04-justlife-home-services/
-        └── README.md                      # Justlife: Slot booking, Step Functions, calendar engines
+    ├── 01-talabat-food-delivery/          # Quick commerce, live tracking & 3-sided marketplace
+    ├── 02-careem-ride-hailing/            # H3 spatial matching, dynamic surge pricing & ledger
+    ├── 03-netflix-video-streaming/        # VOD chunk transcoding, multi-region active-active
+    ├── 04-justlife-home-services/         # Step Functions, slot booking & recurring engine
+    ├── 05-clickhouse-analytics/           # Real-time columnar OLAP, S3 zero-copy replication
+    ├── 06-apple-app-store/                # App thinning, delta updates & FairPlay DRM
+    ├── 07-google-play-store/              # Dynamic AAB splits, Play Integrity & in-app billing
+    ├── 08-shopify-ecommerce/              # Flash sales, atomic inventory & tenant isolation
+    ├── 09-aramex-logistics-tracking/      # High-speed parcel scans & WhatsApp location bot
+    ├── 10-fedex-sorting-hub-operations/  # Edge conveyor sorting & SenseAware cold-chain IoT
+    ├── 11-dhl-global-freight-customs/     # B2B EDI, AI customs document parsing & WORM audit
+    └── 12-linkedin-social-graph/          # Graph traversals, hybrid feed fan-out & vector search
 ```
 
 ---
